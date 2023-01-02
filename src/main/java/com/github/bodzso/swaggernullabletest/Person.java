@@ -6,7 +6,7 @@ import java.util.List;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 public class Person {
-  @Schema(nullable = true, example = "null")
+  @Schema(nullable = true, example = "null", defaultValue = "null")
   private String firstName;
   @Schema(nullable = true, example = " ", defaultValue = " ")
   private String lastName;
@@ -14,16 +14,16 @@ public class Person {
   private String middleName;
   @Schema(nullable = true, example = "\"null\"", defaultValue = "\"null\"")
   private String nickName;
-  @Schema(nullable = true, example = "null")
+  @Schema(nullable = true, example = "null", defaultValue = "null")
   private Integer age;
-  @Schema(nullable = true, example = "null")
+  @Schema(nullable = true, example = "null", defaultValue = "null")
   private BigDecimal height;
-  @Schema(example = "null")
-  private Pet pet;
-  @Schema(example = "null")
-  private List<Person> friends;
-  @Schema(nullable = true, example = "null")
+  @Schema(nullable = true, example = "null", defaultValue = "null")
   private Boolean glasses;
+  @Schema(example = "null", defaultValue = "null")
+  private Pet pet;
+  @Schema(example = "null", defaultValue = "null")
+  private List<Person> friends;
 
   //region Getters, setters
   public String getFirstName() {
@@ -74,6 +74,14 @@ public class Person {
     this.height = height;
   }
 
+  public Boolean getGlasses() {
+    return glasses;
+  }
+
+  public void setGlasses(Boolean glasses) {
+    this.glasses = glasses;
+  }
+
   public Pet getPet() {
     return pet;
   }
@@ -88,14 +96,6 @@ public class Person {
 
   public void setFriends(List<Person> friends) {
     this.friends = friends;
-  }
-
-  public Boolean getGlasses() {
-    return glasses;
-  }
-
-  public void setGlasses(Boolean glasses) {
-    this.glasses = glasses;
   }
   //endregion
 }

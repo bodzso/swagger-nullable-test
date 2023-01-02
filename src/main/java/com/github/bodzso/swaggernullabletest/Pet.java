@@ -3,9 +3,9 @@ package com.github.bodzso.swaggernullabletest;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 public class Pet {
-  @Schema(example = "null")
+  @Schema(example = "null", defaultValue = "null")
   private String name;
-  @Schema(example = "null")
+  @Schema(example = "null", defaultValue = "null")
   private Integer age;
 
   //region Getters, setters
